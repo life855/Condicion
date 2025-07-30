@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="condicion">
+  <!-- Condición: Alergias -->
+  <div class="condicion-item">
+    <label for="alergia" class="condicion-label">¿Tiene alergias?</label>
+    <input type="checkbox" name="condiciones[alergias][respuesta]" id="alergia" class="condicion-input" onchange="toggleDescripcion(this)"/>
+    <textarea name="condiciones[alergias][descripcion]" placeholder="Describa la alergia" class="descripcion"></textarea>
+  </div>
+
+  <!-- Condición: Ronca -->
+  <div class="condicion-item">
+    <label for="ronca" class="condicion-label">¿Ronca cuando duerme?</label>
+    <input type="checkbox" name="condiciones[ronca][respuesta]" id="ronca" class="condicion-input" onchange="toggleDescripcion(this)">
+    <textarea name="condiciones[ronca][descripcion]" placeholder="Describa la situación" class="descripcion"></textarea>
+  </div>
+
+  <!-- Condición: Se resfría -->
+  <div class="condicion-item">
+    <label for="resfria" class="condicion-label">¿Se resfría con frecuencia?</label>
+    <input type="checkbox" name="condiciones[resfria][respuesta]" id="resfria" class="condicion-input" onchange="toggleDescripcion(this)">
+    <textarea name="condiciones[resfria][descripcion]" placeholder="Describa la situación" class="descripcion"></textarea>
+  </div>
+
+  <!-- Condición: Amigdalitis -->
+  <div class="condicion-item">
+    <label for="amigdalitis" class="condicion-label">¿Sufre de amigdalitis?</label>
+    <input type="checkbox" name="condiciones[amigdalitis][respuesta]" id="amigdalitis" class="condicion-input" onchange="toggleDescripcion(this)"> 
+    <textarea name="condiciones[amigdalitis][descripcion]" placeholder="Describa la situación" class="descripcion"></textarea>
+  </div>
+
+  <!-- Condición: Dificultad masticar -->
+  <div class="condicion-item">
+    <label for="masticar" class="condicion-label">¿Tiene dificultad para masticar?</label>
+    <input type="checkbox" name="condiciones[masticar][respuesta]" id="masticar" class="condicion-input" onchange="toggleDescripcion(this)"> 
+    <textarea name="condiciones[masticar][descripcion]" placeholder="Describa la situación" class="descripcion"></textarea>
+  </div>
+
+  <!-- Condición: Succiona dedo/labio -->
+  <div class="condicion-item">
+    <label for="succion" class="condicion-label">¿Se succiona el dedo / labio?</label>
+    <input type="checkbox" name="condiciones[succion][respuesta]" id="succion" class="condicion-input" onchange="toggleDescripcion(this)"> 
+    <textarea name="condiciones[succion][descripcion]" placeholder="Describa la situación" class="descripcion"></textarea>
+  </div>
+
+  <!-- Recibió tratamiento ortodoncia-->
+  <div class="condicion-item">
+    <label for="ortodoncia" class="condicion-label">¿Recibió tratamiento de ortodoncia?</label>
+    <input type="checkbox" name="condiciones[ortodoncia][respuesta]" id="ortodoncia" class="condicion-input" onchange="toggleDescripcion(this)"> 
+    <textarea name="condiciones[ortodoncia][descripcion]" placeholder="Describa la situación" class="descripcion"></textarea>
+  </div>
+</div>
+
+
+<script>
+  function toggleDescripcion(checkbox) {
+    const container = checkbox.closest('.condicion-item');
+    const textAreaDescripcion = container.querySelector('.descripcion');
+
+    if (checkbox.checked) {
+      textAreaDescripcion.classList.add('visible');
+      container.classList.add('activo');
+    } else {
+      textAreaDescripcion.classList.remove('visible');
+      container.classList.remove('activo');
+    }
+  }
+</script>
+
+</body>
+</html>
